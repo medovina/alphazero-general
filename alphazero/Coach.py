@@ -445,9 +445,9 @@ class Coach:
             )
             
             try:
-                data_tensor = torch.load(filename + '-data.pkl')
-                policy_tensor = torch.load(filename + '-policy.pkl')
-                value_tensor = torch.load(filename + '-value.pkl')
+                data_tensor = torch.load(filename + '-data.pkl', weights_only = False)
+                policy_tensor = torch.load(filename + '-policy.pkl', weights_only = False)
+                value_tensor = torch.load(filename + '-value.pkl', weights_only = False)
             except FileNotFoundError as e:
                 print('Warning: could not find tensor data. ' + str(e))
                 return
